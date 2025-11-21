@@ -7,6 +7,22 @@ packages:
   gitUrl: https://github.com/johnpcarter
   gitUsername: johnpcarter
   gitBranch: main
+- name: JcHelloWorldAPI
+  gitServerName: johnpcarter_shared
+  gitUrl: https://github.com/johnpcarter
+  gitUsername: johnpcarter
+  gitBranch: main
+services:
+- serviceName: project.jc_demo.integrations:SayHi
+  packages:
+  - name: JC_DEMOProject
+    version: "1.0"
+  - name: JcHelloWorldAPI
+    version: "1.1"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 configurationVariables:
   jdbc.SAP TxStore Pool.maxConns: "10"
   jdbcfunc.SAPTxStore.failFastMode: false
