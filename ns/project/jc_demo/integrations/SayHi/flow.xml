@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.2" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<SEQUENCE NAME="IF" EXIT-ON="FAILURE" CONDITION="((%/name%))" FORM="IF">
+
+  <!-- nodes -->
+
+<INVOKE NAME="JcHelloWorldAPI" SERVICE="jc.helloworld.pub:greet">
+</INVOKE>
+</SEQUENCE>
+
+<SEQUENCE NAME="ELSE" EXIT-ON="FAILURE" CONDITION="" FORM="ELSE">
+
+  <!-- nodes -->
+
+<EXIT NAME="EXIT" FROM="$flow" SIGNAL="FAILURE" FAILURE-MESSAGE="Please provide a valid name input">
+  <COMMENT></COMMENT>
+</EXIT>
+</SEQUENCE>
+</FLOW>
